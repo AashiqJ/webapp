@@ -21,7 +21,7 @@ pipeline{
             }
         }
 
-        stage("mvn build"){
+        stage("Build"){
             steps{
                 script{
                     bat(/"${MAVEN_HOME}\bin\mvn" -Dtest=ExampleTest test/)
@@ -37,7 +37,7 @@ pipeline{
             }
         }
 
-        stage("publish to nexus"){
+        stage("Publish to Nexus"){
             steps{
                 script{
                     pom = readMavenPom file: "pom.xml";
@@ -81,10 +81,10 @@ pipeline{
                 }
             }
         }
-        stage("Performance Test by Blazemeter"){
-            steps{
-                build job:'Run BlazeMeter'
-            }
-        }
+        // stage("Performance Test by Blazemeter"){
+        //     steps{
+        //         build job:'Run BlazeMeter'
+        //     }
+        // }
     }
 }
