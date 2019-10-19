@@ -66,9 +66,14 @@ pipeline{
         }
         stage("Deploy"){
             steps{
-                script{
-                    bat("C:\\Users\\aashiq.jacob\\Downloads\\curl-7.66.0_2-win64-mingw\\curl-7.66.0-win64-mingw\\bin\\curl -v -u ${TOMCAT_USER}:${env.TOMCAT_PASSWORD} -T target/mvn-hello-world.war http://${TOMCAT_SERVER}:8080/opt/tomcat/mvn-hello-world/") 
-                }
+                // script{
+                //     bat("C:\\Users\\aashiq.jacob\\Downloads\\curl-7.66.0_2-win64-mingw\\curl-7.66.0-win64-mingw\\bin\\curl -v -u ${TOMCAT_USER}:${env.TOMCAT_PASSWORD} -T target/mvn-hello-world.war http://${TOMCAT_SERVER}:8080/opt/tomcat/mvn-hello-world/") 
+                // }
+                sshagent {
+	      sh "echo 'hello'"
+          //sh "ssh ec2-user@${tomcatDevIp} ${tomcatStop}"
+		  //sh "ssh ec2-user@${tomcatDevIp} ${tomcatStart}"
+       }
             }
         }
     }
