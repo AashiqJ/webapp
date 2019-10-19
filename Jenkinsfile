@@ -90,7 +90,7 @@ pipeline{
         stage("Check"){
             steps{
                 script{
-                    bat("inspec")
+                    bat 'inspec'
                 }
             }
         }
