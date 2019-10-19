@@ -86,5 +86,13 @@ pipeline{
         //         build job:'Run BlazeMeter'
         //     }
         // }
+
+        stage("Check"){
+            steps{
+                script{
+                    bat("inspec")
+                }
+            }
+        }
     }
 }
