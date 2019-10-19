@@ -24,6 +24,14 @@ pipeline{
         stage("mvn build"){
             steps{
                 script{
+                    bat(/"${MAVEN_HOME}\bin\mvn" -Dtest=ExampleTest test/)
+                }
+            }
+        }
+
+        stage("Test"){
+            steps{
+                script{
                     bat(/"${MAVEN_HOME}\bin\mvn" package/)
                 }
             }
