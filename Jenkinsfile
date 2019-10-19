@@ -2,6 +2,9 @@ pipeline{
     agent{
         label "master"
     }
+    triggers {
+	    cron('* * * * *')
+    }
     tools{
         maven "Maven"
     }
@@ -71,6 +74,11 @@ pipeline{
 
                      bat("C:\\Users\\aashiq.jacob\\Downloads\\curl-7.66.0_2-win64-mingw\\curl-7.66.0-win64-mingw\\bin\\curl -v -u ${TOMCAT_USER}:${env.TOMCAT_PASSWORD} -T target/mvn-hello-world.war http://${TOMCAT_SERVER}:8080/manager/text/deploy?path=/mvn-hello-world") 
                 }
+            }
+        }
+        stage("Performance Test by Blazemeter"){
+            steps{
+                build job:'Run BlazeMeter'
             }
         }
     }
