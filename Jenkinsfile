@@ -2,9 +2,6 @@ pipeline{
     agent{
         label "master"
     }
-    triggers {
-	    cron('* * * * *')
-    }
     tools{
         maven "Maven"
     }
