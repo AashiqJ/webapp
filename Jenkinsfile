@@ -66,7 +66,7 @@ pipeline{
         stage("Deploy"){
             steps{
                 script{
-                    bat("C:\\Users\\aashiq.jacob\\Downloads\\curl-7.66.0_2-win64-mingw\\curl-7.66.0-win64-mingw\\bin\\curl -v -u ${TOMCAT_USER}:${TOMCAT_PASSWORD} -T ${NEXUS_PROTOCOL}://${NEXUS_URL}/repository/${NEXUS_REPOSITORY}/com/dev3l/hello_world/mvn-hello-world/${BUILD_NUMBER}/mvn-hello-world-${BUILD_NUMBER}.war http://18.191.189.44:8080/") 
+                    bat("C:\\Users\\aashiq.jacob\\Downloads\\curl-7.66.0_2-win64-mingw\\curl-7.66.0-win64-mingw\\bin\\curl -v -u ${TOMCAT_USER}:${env.TOMCAT_PASSWORD} -T target/mvn-hello-world.war http://18.191.189.44:8080/") 
                 }
             }
         }
