@@ -12,7 +12,7 @@ pipeline{
         NEXUS_REPOSITORY = "maven-releases"
         NEXUS_CREDENTIAL_ID = "4af1168e-1b44-46cd-8d00-56480d6407c0"
         TOMCAT_USER = "admin"
-        TOMCAT_SERVER = "3.17.186.70"
+        TOMCAT_SERVER = "18.191.89.215"
     }
     stages{
         stage('Checkout'){
@@ -86,13 +86,5 @@ pipeline{
         //         build job:'Run BlazeMeter'
         //     }
         // }
-
-        stage("Check"){
-            steps{
-                script{
-                    bat 'inspec'
-                }
-            }
-        }
     }
 }
