@@ -86,7 +86,7 @@ pipeline{
         //         build job:'Run BlazeMeter'
         //     }
         // }
-        stage("Test"){
+        stage("Check"){
             steps{
                 script{
                 bat("C:\\opscode\\inspec\\bin\\inspec")
