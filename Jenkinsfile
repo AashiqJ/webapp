@@ -81,10 +81,10 @@ pipeline{
                 }
             }
         }
-        stage("Performance Test by Blazemeter"){
-            steps{
-                build job:'Run BlazeMeter'
-            }
-        }
+        // stage("Performance Test by Blazemeter"){
+        //     steps{
+        //         build job:'Run BlazeMeter'
+        //     }
+        // }
     }
 }
