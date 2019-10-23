@@ -88,8 +88,9 @@ pipeline{
         // }
         stage("Test"){
             steps{
+                script{
                 bat("C:\\opscode\\inspec\\bin\\inspec")
-            }
+            }}
         }
     }
 }
