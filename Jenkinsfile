@@ -81,9 +81,14 @@ pipeline{
                 }
             }
         }
-        stage("Performance Test by Blazemeter"){
+        // stage("Performance Test by Blazemeter"){
+        //     steps{
+        //         build job:'Run BlazeMeter'
+        //     }
+        // }
+        stage("Test"){
             steps{
-                build job:'Run BlazeMeter'
+                bat("C:\\opscode\\inspec\\bin\\inspec")
             }
         }
     }
